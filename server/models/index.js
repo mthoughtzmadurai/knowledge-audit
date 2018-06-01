@@ -10,9 +10,9 @@ let sequelize = new Sequelize(config.dbSettings.database,
 
 let db = {};
 
-if(process.env.NODE_ENV==='test'){
-  console.log('THIS IS A TEST - SEQUELIZE MOCKED')
-}
+// if(process.env.NODE_ENV==='test'){
+//   console.log('THIS IS A TEST - SEQUELIZE MOCKED')
+// }
 
 fs
   .readdirSync(__dirname)

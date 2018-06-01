@@ -12,10 +12,10 @@ let auth = new Auth(config);
 const app = express();
 
 app.use(cors('/api/v1/*'))
-if(process.env.NODE_ENV !== 'test'){
-  app.use(auth.addUserInfo)
-  app.use(logger('dev'))
-}
+// if(process.env.NODE_ENV !== 'test'){
+//   app.use(auth.addUserInfo)
+//   app.use(logger('dev'))
+// }
 
 app.use(bodyParser.json());
 

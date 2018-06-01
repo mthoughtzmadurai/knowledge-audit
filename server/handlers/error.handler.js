@@ -10,7 +10,7 @@ module.exports = function(err,req,res,next){
     message: err.message,
     pathMessage: `encountered an error trying to ${req.method} ${req.path}`,
     requestBody: null,
-    error: (process.env.NODE_ENV === 'dev') ? err : {}
+    // error: (process.env.NODE_ENV === 'dev') ? err : {}
   }
 
   let status = 500

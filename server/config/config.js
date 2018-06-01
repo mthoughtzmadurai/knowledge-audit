@@ -14,7 +14,7 @@ const dbSettings = {
       max : 300,
       idle: 30000,
     },
-    logging: process.env.NODE_ENV !== 'test' // disable query logging during testing
+    // logging: process.env.NODE_ENV !== 'test' // disable query logging during testing
   }
 }
 
