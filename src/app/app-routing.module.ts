@@ -5,7 +5,6 @@ import { HomeComponent } from './components/home/home.component';
 import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
 import { KnowledgeComponent } from './components/knowledge/knowledge.component';
 
-import { AuthGuard } from './services/auth.guard.service';
 
 const appRoutes: Routes = [
   {
