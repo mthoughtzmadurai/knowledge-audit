@@ -1,1 +1,47 @@
-<button mat-raised-button (click)="openDialog()">Add</button>
+<form class="srchfrm">
+<mat-form-field>
+    <input class="example-form" matInput placeholder="Search">
+</mat-form-field>
+<!-- <button class="btn1" mat-raised-button color="accent">Search</button> -->
+</form>
+<button mat-raised-button class="btn add"  color="primary"  (click)="openDialog()"><i class="material-icons">add</i></button>
+<div class="example-container mat-elevation-z8 cont">
+    <div class="example-header">
+        <mat-form-field>
+          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+        </mat-form-field>
+    </div>
+    <mat-table #table [dataSource]="dataSource">
+  
+      <ng-container matColumnDef="topic">
+        <mat-header-cell *matHeaderCellDef> Topic </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.topic}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="domain">
+        <mat-header-cell *matHeaderCellDef> Domain </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.domain}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="off">
+        <mat-header-cell *matHeaderCellDef> Office </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.office}} </mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="act">
+        <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+            <button mat-raised-button class="btn" color="accent"><i class="material-icons"> create </i></button>
+            <button mat-raised-button class="btn"  color="accent"><i class="material-icons"> clear </i></button>
+        </mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+
+    <!-- <mat-paginator #paginator
+                 [pageSize]="10"
+                 [pageSizeOptions]="[5, 10, 20, 30]">
+  </mat-paginator> -->
+  </div>

@@ -148,17 +148,24 @@
         margin-bottom:0;
     }
     .actionbtn{
-        background: #60c560;
-        border-color: #60c560;
-        box-shadow: none;
-        color: white;
-        padding: 10px;
-        margin: 5px;
-        border-radius: 5px;
-        font-size: 12px;
-        font-weight: bold;
-        cursor: pointer;
+        // background: #60c560;
+        // border-color: #60c560;
+        // box-shadow: none;
+        // color: white;
+        // padding: 10px;
+        // margin: 5px;
+        // border-radius: 5px;
+        // font-size: 12px;
+        // font-weight: bold;
+        // cursor: pointer;
+        box-shadow: none !important;
     }
+    .mat-raised-button.mat-primary{
+        background-color: #60c560;
+        border-color: #60c560;
+        color: #fff;
+    }
+    
     .fieldCls{
       margin-bottom: 10px;
     }
