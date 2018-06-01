@@ -16,7 +16,7 @@ export class CategoryComponent implements OnInit {
   brokers = []
   stakeholders = []
 
-  selectedMainCategory = {};
+  selectedMainCategory = {SubCategories:[]};
   selectedMainCategoryIndex = 0;
 
   constructor(
@@ -45,23 +45,33 @@ export class CategoryComponent implements OnInit {
   }
 
   selectCategory(catindex){
-    this.selectedMainCategory = {}
+    this.selectedMainCategory = {SubCategories:[]}
     this.selectedMainCategoryIndex = catindex;
     this.selectedMainCategory = this.LkupData["Categories"][this.selectedMainCategoryIndex];
   }
   
   goPrev(){
-    this.selectedMainCategory = {}
+    this.selectedMainCategory = {SubCategories:[]}
     var index = this.selectedMainCategoryIndex
     this.selectedMainCategoryIndex = index - 1;
     this.selectedMainCategory = this.LkupData["Categories"][this.selectedMainCategoryIndex];
   }
 
   goNext(){
-    this.selectedMainCategory = {}
+    this.selectedMainCategory = {SubCategories:[]}
     this.selectedMainCategoryIndex = this.selectedMainCategoryIndex + 1;
     this.selectedMainCategory = this.LkupData["Categories"][this.selectedMainCategoryIndex];
   }
+
+  close(){
+    this.dialogRef.close();
+  }
+
+
+  save(){
+
+  }
+
 
   ngOnInit() {
 
