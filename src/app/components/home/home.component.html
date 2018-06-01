@@ -1,0 +1,17 @@
+<div class="content">
+
+  <div *ngIf="givenName">
+    <h1>Welcome!</h1>
+    <p>
+      <button mat-raised-button color="accent" routerLink="/architects">View Architects</button>
+    </p>
+    <p>
+      <button mat-raised-button color="basic" routerLink="/style-guide">P+W App Style Guide</button>
+    </p>
+  </div>
+
+  <div *ngIf="!givenName">
+    <h1>Splash Page</h1>
+  </div>
+</div>
+

@@ -1,0 +1,39 @@
+language: node_js
+node_js:
+- 8.4.0
+branches:
+  only:
+  - staging
+sudo: required
+dist: trusty
+addons:
+    chrome: stable
+before_script:
+- npm install -g @angular/cli
+- "sudo chown root /opt/google/chrome/chrome-sandbox"
+- "sudo chmod 4755 /opt/google/chrome/chrome-sandbox"
+script:
+- NODE_ENV=test npm test
+- if [ "$TRAVIS_BRANCH" = "staging" ]; then ng build --prod --aot --env=staging; fi
+- if [ "$TRAVIS_BRANCH" = "master" ]; then ng build --prod --aot --env=prod; fi
+- git add --force ./dist
+- git commit -m 'commiting for deploy to production'
+deploy:
+- provider: elasticbeanstalk
+  skip_cleanup: true
+  access_key_id: "$access_key_id"
+  secret_access_key:
+    secure: "$secret_access_key"
+  region: us-west-1
+  app: pw-pwapp
+  env: pwapp-env
+  bucket_name: pwapp-staging
+  on:
+    repo: PerkinsAndWill-IO/pwapp
+    branch: staging
+
+
+
+notifications:
+  slack:
+    secure: TNQMYz6h/ZXWU438aw92Ch50GLvW8M2EZdrG+/aPIwBkGGQwT+Lb5IJO+Xgupq4xHPSyl+F+m1COcZZ2jvKTErD2jz6FA7piWVXMArAZ7t+YRcudTGcv5z2WzInM6m1pPPYNxoVR1slpuYUoqsFcuZM9VOlWes3RGW1sZCCmUxjPKH4o9dbPfXBG+zMaGnToUEcGuyuJGKu9s8HxHQ2pTVZNMHXK4mlbq2r/JyJcQ+b6xVrEIrO+XOMnfTwGBe2ngZ3dN+xvYsdzYvftBAwNZst1Vw5xQE8AIgor3xg4wFIX5KBMTt7ijxD9LfPUHimNnNIU1l0Q5eHVyiapiqR8WYIO5Lc+JQNjIP6TzsxRuKPKTBewttxCN+36UI4pLJxiM7FWGbJ4aLg3pvU42vsK1YmiObC9vZDEN8657Uax1EQboC3GXDplNbHcLHKulH9XVKgYte4bF3Y/tudADf0dS7ysQ2Xbghbv0CrfYjWwXvAs+2UiFGrvqUXZ8KRuogoU6Y/Zpntq6TZAdgnerHskosZ80kRBVE/SSBC96Y3nOYTCjKVDGGa0K+xJQ5uuoIL1sdAOIy+f+m9fBRcuNf/XAWIIk3TMBYA8GTPovhUhL3ubjHT98hfCMLjTGsGDkzj+rLsacEUfIObqjV+gUSptyer8IvcbRKE6Hsn2Ij9FmRg=

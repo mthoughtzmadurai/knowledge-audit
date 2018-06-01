@@ -1,0 +1,27 @@
+@import "../../../../styles/base/_variables";
+
+/deep/ {
+  .mat-snack-bar-container.pwapp-snackbar {
+    background-color: $pw-blue;
+
+    p {
+      font-size: 13px;
+    }
+  }
+
+  @media #{$gt-xs} {
+    .mat-snack-bar-container.pwapp-snackbar {
+      p {
+        font-size: 15px;
+      }
+    }
+  }
+
+  @media #{$gt-sm} {
+
+  }
+
+  @media #{$gt-md} {
+
+  }
+}

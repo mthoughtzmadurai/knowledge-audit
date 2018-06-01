@@ -1,0 +1,62 @@
+<div mat-dialog-title><h2>Add Detail</h2>
+    <div class="actions">
+        <button   class="close" (click)="close()">X</button>
+    </div>
+</div>
+
+<mat-dialog-content>
+    <div class="splitter_container">
+        <div class="left_container">
+            <div class="category_title" *ngFor = "let lkup of LkupData.Categories; let catindex = index" (click)="selectCategory(catindex)">
+                <div [class]="catindex == selectedMainCategoryIndex ? 'selected' : ''">{{lkup.CategoryName}}</div>
+            </div>
+        </div>
+        <div class="right_container">
+
+            <div class="sub_category" *ngFor= "let subcat of selectedMainCategory.SubCategories">
+                <div *ngIf="subcat.Type == 'Single'">
+                        <mat-form-field>
+                                <!-- <label>{{subcat.SubCategoryName}}</label> -->
+                            <mat-select placeholder="{{subcat.SubCategoryName}}">
+                                <mat-option *ngFor="let data of subcat.Data" [value]="data.Value">
+                                    {{ data.Value }}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field> 
+                </div> 
+                <div *ngIf="subcat.Type == 'Multiple'">
+                        <mat-form-field>
+                                <!-- <label>{{subcat.SubCategoryName}}</label> -->
+                            <mat-select placeholder="{{subcat.SubCategoryName}}" multiple>
+                                    <mat-option *ngFor="let data of subcat.Data" [value]="data.Value">
+                                        {{ data.Value }}
+                                    </mat-option>
+                            </mat-select>
+                        </mat-form-field> 
+                </div>
+                <div *ngIf="subcat.Type == 'Employees'">
+                        <mat-form-field>
+                                <!-- <label>{{subcat.SubCategoryName}}</label> -->
+                            <mat-select placeholder="{{subcat.SubCategoryName}}" multiple>
+                                    <mat-option *ngFor="let data of leaders" [value]="data.ID">
+                                        {{ data.FirstName }} {{ data.LastName }}
+                                    </mat-option>
+                            </mat-select>
+                        </mat-form-field> 
+                </div>
+                <div *ngIf="subcat.Type == 'Text'">
+                    <mat-form-field class="example-full-width">
+                        <!-- <label>{{subcat.SubCategoryName}}</label> -->
+                        <input matInput placeholder="{{subcat.SubCategoryName}}">
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+    </div>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button class="actionbtn" (click)="goPrev()" [disabled]="selectedMainCategoryIndex == 0">Prev</button>
+    <button class="actionbtn" (click)="goNext()" [disabled]="selectedMainCategoryIndex == LkupData.Categories.length-1">Next</button>
+    <button class="actionbtn" (click)="save()">Save</button>
+</mat-dialog-actions>

@@ -1,0 +1,22 @@
+@import "../../../../styles/base/_variables";
+
+/deep/ {
+  .footer {
+    padding-bottom: 50px;
+  }
+
+  @media #{$gt-xs} {
+    .footer {
+    }
+  }
+
+  @media #{$gt-sm} {
+    .footer {
+    }
+  }
+
+  @media #{$gt-md} {
+    .footer {
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "P+W Application Boilerplate",
+    "version" : "1.0.0",
+    "title" : "PWApp"
+  },
+  "consumes" : [ "application/json" ],
+  "produces" : [ "application/json" ],
+  "paths" : {
+    "/architects": {
+      "get": {
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Status 200",
+            "schema": {
+              "required": [
+                "architect"
+              ],
+              "type": "object",
+              "properties": {
+                "architect": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/Architect"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Architect" : {
+      "type" : "object",
+      "required" : [ "id", "firstName", "lastName" ],
+      "properties" : {
+        "id" : {
+          "type" : "integer"
+        },
+        "firstName" : {
+          "type" : "string"
+        },
+        "lastName" : {
+          "type" : "string"
+        },
+        "createdBy" : {
+          "type" : "integer"
+        },
+        "createdDate" : {
+          "type" : "string",
+          "format" : "date-time"
+        },
+        "modifiedBy" : {
+          "type" : "integer"
+        },
+        "modifiedDate" : {
+          "type" : "string",
+          "format" : "date-time"
+        }
+      }
+    }
+  }
+}
