@@ -1,26 +1,109 @@
+// /deep/{
+
+//     .splitter_container{
+//         width:100%;
+//     }
+    
+//     .left_container{
+//         width:30%;
+//         border-right:1px solid #ccc;
+//         float: left;
+//     }
+//     .right_container{
+//         width:70%;
+//         float: left;
+//         padding:10px;
+//     }
+
+//     .selected{
+//         font-weight: bold;
+//     }
+
+//     .mat-form-field{
+//         width:100%;
+//     }
+
+//     .mat-dialog-container{
+//         padding:0 !important;
+//     }
+
+//     .mat-dialog-title{
+//         background: #f1f1f1;
+//         padding:10px;
+//     }
+//     .actions{
+//         position: absolute;
+//         top: 0;
+//         right: 10px;
+//     }
+//     .actions button{
+//         border:none;
+//     }
+//     button.close{
+//         padding: 0;
+//         cursor: pointer;
+//         background: transparent;
+//         border: 0;
+//         -webkit-appearance: none;
+//         font-weight: bold;
+//         color: gray;
+//         font-size: 25px;
+//     }
+
+//     .category_title{
+//         padding:10px;
+//         margin-bottom:10px;
+//         font-size: 14px;
+//         cursor:pointer;
+//     }
+
+//     .mat-dialog-actions{
+//         padding:10px;
+//         float:right;
+//     }
+//     .mat-dialog-actions:last-child{
+//         margin-bottom:0;
+//     }
+//     .actionbtn{
+//         background: #777;
+//         color: white;
+//         padding: 10px;
+//         margin: 5px;
+//         border-radius: 5px;
+//         font-size: 12px;
+//         font-weight: bold;
+//         cursor: pointer;
+//     }
+
+// }
+@import "../../../styles/base/_variables";
+
 /deep/{
 
     .splitter_container{
         width:100%;
+        padding: 5px;
     }
-    
+
     .left_container{
-        width:30%;
+        width:25%;
         border-right:1px solid #ccc;
         float: left;
     }
     .right_container{
-        width:70%;
+        width:75%;
         float: left;
         padding:10px;
     }
 
     .selected{
         font-weight: bold;
+        color: $pw-blue;
     }
 
     .mat-form-field{
         width:100%;
+        font-size: 15px;
     }
 
     .mat-dialog-container{
@@ -40,21 +123,21 @@
         border:none;
     }
     button.close{
-        padding: 0;
+        padding: 10px;
         cursor: pointer;
         background: transparent;
         border: 0;
         -webkit-appearance: none;
-        font-weight: bold;
+        // font-weight: bold;
         color: gray;
-        font-size: 25px;
+        font-size: 20px;
     }
 
     .category_title{
         padding:10px;
         margin-bottom:10px;
         font-size: 14px;
-        cursor:pointer;
+        cursor: pointer;
     }
 
     .mat-dialog-actions{
@@ -65,7 +148,9 @@
         margin-bottom:0;
     }
     .actionbtn{
-        background: #777;
+        background: #60c560;
+        border-color: #60c560;
+        box-shadow: none;
         color: white;
         padding: 10px;
         margin: 5px;
@@ -74,5 +159,7 @@
         font-weight: bold;
         cursor: pointer;
     }
+    .fieldCls{
+      margin-bottom: 10px;
+    }
 }
-    
