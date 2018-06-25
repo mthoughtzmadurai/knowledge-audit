@@ -1243,7 +1243,7 @@ var LookupService = (function () {
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 var environment = {
     production: false,
-    apiEndpoint: 'http://localhost:8081/api/v1',
+    apiEndpoint: 'https://knowledge-audit.herokuapp.com/api/v1',
     okta: {
         clientId: '0oacrosqllIPmCxXP0h7',
         issuer: 'https://perkinswill.oktapreview.com'
