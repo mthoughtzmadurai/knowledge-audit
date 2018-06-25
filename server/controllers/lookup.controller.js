@@ -33,8 +33,16 @@ class LookupController extends BaseController {
                 Id:1,
                 SubCategories:[
                     {
+                        SubCategoryName:"Topic",
+                        Id:2,
+                        Type:"Text",
+                        Data:[
+                           
+                        ]
+                    },
+                    {
                         SubCategoryName:"Domain/Theme",
-                        Id:1,
+                        Id:2,
                         Type:"Multiple",
                         Data:[
                             {
@@ -213,14 +221,6 @@ class LookupController extends BaseController {
                                 Value:"Other",
                                 Id:44,
                             }
-                        ]
-                    },
-                    {
-                        SubCategoryName:"Topic",
-                        Id:2,
-                        Type:"Text",
-                        Data:[
-                           
                         ]
                     }
                 ]

@@ -44,28 +44,28 @@ export class KnowledgeComponent implements OnInit {
 export interface Element {
   topic: string;
   domain: string;
-  office: string;
+  dateAdded: string;
 }
 
 const ELEMENT_DATA: Element[] = [
-  {topic: "Lorem Ipsum is simply dummy text ", domain: 'IT', office: "Atlanta"},
-  {topic: "Sed ut perspiciatis unde omnis iste natus error", domain: 'Procurement', office: "Boston"},
-  {topic: "Dolor", domain: 'Corporate', office: "Chicago"},
-  {topic: "Sit", domain: 'Project', office: "Washington"},
-  {topic: "Lorem Ipsum is simply dummy text ", domain: 'People', office: "Brooklyn"},
-  {topic: "Lorem", domain: 'IT', office: "Atlanta"},
-  {topic: "Ipsum", domain: 'Procurement', office: "Boston"},
-  {topic: "Dolor", domain: 'Corporate', office: "Chicago"},
-  {topic: "Sit", domain: 'Project', office: "Washington"},
-  {topic: "Lorem Ipsum is simply dummy text ", domain: 'People', office: "Brooklyn"},
-  {topic: "Sed ut perspiciatis unde omnis iste natus error", domain: 'IT', office: "Atlanta"},
-  {topic: "Ipsum", domain: 'Procurement', office: "Boston"},
-  {topic: "consectetur", domain: 'Corporate', office: "Chicago"},
-  {topic: "Sit", domain: 'Project', office: "Washington"},
-  {topic: "Lorem Ipsum is simply dummy text ", domain: 'People', office: "Brooklyn"},
-  {topic: "Lorem", domain: 'IT', office: "Atlanta"},
-  {topic: "Sed ut perspiciatis unde omnis iste natus error", domain: 'Procurement', office: "Boston"},
-  {topic: "Dolor", domain: 'Corporate', office: "Chicago"},
-  {topic: "Sed ut perspiciatis unde omnis iste natus error", domain: 'Project', office: "Washington"},
-  {topic: "Lorem Ipsum is simply dummy text ", domain: 'People', office: "Brooklyn"},
+  {topic: "Lorem Ipsum is simply dummy text ", domain: 'IT', dateAdded: "27-May-2018"},
+  {topic: "Sed ut perspiciatis unde omnis iste natus error", domain: 'Procurement', dateAdded: "01-Jun-2018"},
+  {topic: "Dolor", domain: 'Corporate', dateAdded: "03-Jun-2018"},
+  {topic: "Sit", domain: 'Project', dateAdded: "04-Jun-2018"},
+  {topic: "Lorem Ipsum is simply dummy text ", domain: 'People', dateAdded: "06-Jun-2018"},
+  {topic: "Lorem", domain: 'IT', dateAdded: "08-Jun-2018"},
+  {topic: "Ipsum", domain: 'Procurement', dateAdded: "11-Jun-2018"},
+  {topic: "Dolor", domain: 'Corporate', dateAdded: "11-Jun-2018"},
+  {topic: "Sit", domain: 'Project', dateAdded: "08-May-2018"},
+  {topic: "Lorem Ipsum is simply dummy text ", domain: 'People', dateAdded: "09-May-2018"},
+  {topic: "Sed ut perspiciatis unde omnis iste natus error", domain: 'IT', dateAdded: "10-May-2018"},
+  {topic: "Ipsum", domain: 'Procurement', dateAdded: "10-Jun-2018"},
+  {topic: "consectetur", domain: 'Corporate', dateAdded: "10-May-2018"},
+  {topic: "Sit", domain: 'Project', dateAdded: "10-May-2018"},
+  {topic: "Lorem Ipsum is simply dummy text ", domain: 'People', dateAdded: "10-May-2018"},
+  {topic: "Lorem", domain: 'IT', dateAdded: "10-May-2018"},
+  {topic: "Sed ut perspiciatis unde omnis iste natus error", domain: 'Procurement', dateAdded: "10-May-2018"},
+  {topic: "Dolor", domain: 'Corporate', dateAdded: "10-May-2018"},
+  {topic: "Sed ut perspiciatis unde omnis iste natus error", domain: 'Project', dateAdded: "10-May-2018"},
+  {topic: "Lorem Ipsum is simply dummy text ", domain: 'People', dateAdded: "10-May-2018"},
 ];
